@@ -1,0 +1,25 @@
+<section>
+
+<h1>Hello {{ username }} you're a {{ ocuppation }}!</h1>
+@if (
+doesUserExist
+) {
+<p> Felicidades, Existe Usuario </p>
+}
+@else {
+    <p> Sorry, Username no existe</p>
+}
+
+<h2>Operating System</h2>
+<ul>
+@for (os of OperatingSystems; track os.id) {
+    <li (mouseover)="onMouseOver(os.name)" >{{ os.name | uppercase }}</li>
+    }
+</ul>
+
+<div class="edit-div" [contentEditable]="isEditable">
+    
+</div>
+<button (click)="emitToParent()">Message to parent!</button>
+
+</section>
